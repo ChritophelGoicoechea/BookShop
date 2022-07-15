@@ -1,16 +1,154 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
-    }::-webkit-scrollbar {
-    width: 0px; 
-    }/* remove scrollbar space /
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+
+/* remove scrollbar space /
     background: transparent; / optional: just make scrollbar invisible /
     }
     / optional: show position indicator in red */
-    ::-webkit-scrollbar-thumb {
+
+ ::-webkit-scrollbar-thumb {
     background: #FF0000;
-    }
-    
-body{
+}
+
+body {
     overflow-x: hidden;
+}
+
+
+/*menu*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.header {
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: 5px 10%;
+}
+
+.header .nav-link {
+    list-style: none;
+}
+
+.header .nav-link li {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-link li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-link li a:hover {
+    color: red;
+    transition: all 0.3s;
+}
+
+.header .nav-link a {
+    font-size: 700;
+    color: rgb(8, 4, 4);
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(7, 6, 6);
+}
+
+.menu>li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu>li>a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(20, 7, 7);
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: red;
+    transition: all 0.3s;
+}
+
+.submenu {
+    position: absolute;
+    background: darkblue;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.submenu li a {
+    display: block;
+    padding: 15px;
+    color: rgb(15, 7, 7);
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.buscar {
+    position: absolute;
+    position: relative;
+    padding: 5px;
+}
+
+.buscar input {
+    width: 0px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 30px;
+    transition: all 0.6s ease;
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: darkblue;
+    width: 50px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buscar:hover input {
+    width: 240px;
+}
+
+.buscar input:focus {
+    width: 240px;
 }
